@@ -1,0 +1,22 @@
+{
+  "name": "lambda-function",
+  "version": "1.0.0",
+  "description": "AWS Lambda function written in TypeScript",
+  "main": "dist/lambda-function.js",
+  "scripts": {
+    "build": "tsc",
+    "predeploy": "npm run build",
+    "deploy": "cp -r node_modules dist/ && cp .env dist/ && cd dist && zip -r ../lambda_function_payload.zip ."
+  },
+  "dependencies": {
+    "aws-sdk": "^2.814.0",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.72",
+    "@types/node": "^16.11.7",
+    "typescript": "^4.4.4"
+  },
+  "author": "",
+  "license": "ISC"
+}
